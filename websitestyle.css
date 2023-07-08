@@ -1,13 +1,23 @@
 body {
-    background: #003366;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+  background-color: blue;
 }
 
-p {
-    min-height: 1em;
+header {
+  background-color: lightblue;
+  padding: 10px;
 }
 
-a {
-    color: white;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
 }

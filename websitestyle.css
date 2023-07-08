@@ -1,3 +1,13 @@
 body {
-    background-color: pink;
-  }
+    background: #003366;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    min-height: 1em;
+}
+
+a {
+    color: white;
+}

@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>websitestyle.css</title>
-    <style>
-      body {
-        background-color: #1c87c9;
-      }
-    </style>
-  </head>
-  <body></body>
-</html>
+body {
+  background-color: lightblue;
+}

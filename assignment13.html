@@ -29,27 +29,12 @@
 
 console.log("Hello..! Brian!");
 
-let now = new Date();
-alert( now ); // shows current date/time
+<p id="demo"></p>
 
-function draw() {
-  const canvas = document.getElementById("canvas");
-  if (canvas.getContext) {
-    const ctx = canvas.getContext("2d");
-
-    ctx.beginPath();
-    ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
-    ctx.moveTo(110, 75);
-    ctx.arc(75, 75, 35, 0, Math.PI, false); // Mouth (clockwise)
-    ctx.moveTo(65, 65);
-    ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Left eye
-    ctx.moveTo(95, 65);
-    ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Right eye
-    ctx.stroke();
-  }
-}
-
-draw();
+<script>
+const d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
  
   <p>I have always heard of HTML. I understand that it’s code to build a website. I
     learned that it stands for Hyper Text Markup Language. I have also learned if you type one letter or symbol out of

@@ -42,12 +42,11 @@ document.getElementById("demo").innerHTML = d;
 <script>
 const c = document.getElementById("myCanvas");
 const ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.moveTo(40, 40);
-ctx.lineTo(30, 100);
-ctx.lineTo(70, 100);
-ctx.stroke();
-</script>
+
+ctx.rect(20, 20, 150, 100);
+ctx.fillStyle = "red";
+ctx.fill();
+</script> 
   
   <p>I have always heard of HTML. I understand that it’s code to build a website. I
     learned that it stands for Hyper Text Markup Language. I have also learned if you type one letter or symbol out of

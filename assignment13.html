@@ -35,7 +35,20 @@
 const d = new Date();
 document.getElementById("demo").innerHTML = d;
 </script>
- 
+
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid grey"></canvas>
+
+<script>
+const c = document.getElementById("myCanvas");
+const ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(40, 40);
+ctx.lineTo(30, 100);
+ctx.lineTo(70, 100);
+ctx.stroke();
+</script>
+  
   <p>I have always heard of HTML. I understand that it’s code to build a website. I
     learned that it stands for Hyper Text Markup Language. I have also learned if you type one letter or symbol out of
     place the code will simply not work correctly. I discovered some free HTML code editors that show you the code and

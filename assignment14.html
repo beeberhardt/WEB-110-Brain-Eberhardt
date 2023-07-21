@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>assignment</title>
+<title>assignment</title>
   <link rel="stylesheet" href="websitestyle.css">
   <style>
     body {
@@ -17,7 +16,7 @@
     p {
       font-family: verdana;
       color: white;
-      text-align: center;
+      text-align: left;
       font-size: 20px;
     }
   </style>
@@ -27,23 +26,77 @@
 
 <h1 style="color:white;">Assignment 14</h1>
 
+<!-- Single-table SELECT -->
 <h2 style="color:white;">SELECT * FROM Customers;</h2>
-  
-<h2 style="color:white;">SELECT CustomerName, City FROM Customers;"</h2>
-  
-<h2 style="color:white;">SELECT * FROM table_name;</h2>
-  
-<h2 style="color:white;">INSERT INTO table_name
-VALUES (value1, value2, value3, ...);</h2> 
-  
-<h2 style="color:white;">UPDATE Customers
-SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
-WHERE CustomerID = 1;</h2>
 
-<h2 style="color:white;">DELETE FROM table_name WHERE condition;</h2>
+<h2 style="color:white;">SELECT CustomerID, CustomerName FROM Customers;</h2>
+
+<h2 style="color:white;">SELECT CustomerName, Address, City, PostalCode FROM Customers WHERE Country = 'UK';</h2>
+
+<h2 style="color:white;">SELECT ContactName, CustomerName FROM Customers ORDER BY ContactName;</h2>
+
+<h2 style="color:white;">SELECT COUNT(*) AS TotalCustomers FROM Customers;</h2>
+
+<h2 style="color:white;">SELECT Country, COUNT(*) AS NumCustomers FROM Customers GROUP BY Country;</h2>
+
+<h2 style="color:white;">SELECT Country, COUNT(*) AS NumCustomers FROM Customers GROUP BY Country ORDER BY NumCustomers DESC, Country ASC;</h2>
+
+<h2 style="color:white;">SELECT Country, COUNT(*) AS NumCustomers FROM Customers GROUP BY Country HAVING NumCustomers > 10 ORDER BY NumCustomers DESC, Country ASC;</h2>
+
+<!-- Multiple-table -->
+<!-- Assume there are two tables, "Customers" their "Orders" -->
+<h2 style="color:white;">SELECT Customers.CustomerName, Orders.OrderID, Orders.OrderDate 
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;</h2>
+
+<h2 style="color:white;">SELECT Customers.CustomerName, Orders.OrderID AS 'Order Number', Orders.OrderDate 
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;</h2>
+
+<h2 style="color:white;">SELECT Customers.CustomerName, Orders.OrderID AS 'Order Number', Orders.OrderDate 
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+ORDER BY Customers.CustomerName, Orders.OrderID;</h2>
+
+<h2 style="color:white;">SELECT Orders.OrderID, Orders.OrderDate, Products.ProductName, OrderDetails.QuantityOrdered
+FROM Orders
+INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID;</h2>
+
+<h2 style="color:white;">SELECT Orders.OrderID, Orders.OrderDate, Products.ProductName, OrderDetails.QuantityOrdered, (OrderDetails.QuantityOrdered * Products.Price) AS ExtendedPrice
+FROM Orders
+INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID;</h2>
+
+<h2 style="color:white;">SELECT Orders.OrderID, Orders.OrderDate, Products.ProductName, OrderDetails.QuantityOrdered, (OrderDetails.QuantityOrdered * Products.Price) AS ExtendedPrice
+FROM Orders
+INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID
+WHERE Orders.CustomerID = 2;</h2>
+
+<h2 style="color:white;">SELECT Orders.OrderID, Orders.OrderDate, Products.ProductName, OrderDetails.QuantityOrdered, (OrderDetails.QuantityOrdered * Products.Price) AS ExtendedPrice
+FROM Orders
+INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+WHERE Customers.CustomerName = 'Around the Horn';</h2>
+
+<!-- INSERT, UPDATE, and DELETE statements -->
+<!-- Assume there is a table named "Shippers" -->
+<h2 style="color:white;">INSERT INTO Shippers (ShipperID, ShipperName, Phone) 
+VALUES (4, 'On Time Delivery', '(503) 555 0123');</h2>
+
+<h2 style="color:white;">UPDATE Products SET Price = Price + 1;</h2>
+
+<h2 style="color:white;">UPDATE Products SET Price = Price - 1;</h2>
+
+<h2 style="color:white;">UPDATE Shippers SET ShipperName = 'On-Time Delivery' WHERE ShipperID = 4;</h2>
+
+<h2 style="color:white;">DELETE FROM Shippers WHERE ShipperID = 4;</h2>
+
+<p>I have never heard of SQL. I learned it stands for Structured Query Language. SQL is what communicates with a database. I understand that a database is used to store information needed for SQL.  I enjoyed the Khan Academy videos. I learned about the applications of SQL and what it can do for a website. I enjoyed the sqlzoo site because they show the code and results. I liked going over the w3schools exercises. They ask you to write the answer to the statement and have the show answer available so I can complete the exercise. I feel that I have completed this assignment with the help of these videos.</p>
 
   
-  <p>I have never heard of SQL. I learned it stands for Structured Query Language. SQL is what communicates with a database. I understand that a database is used to store information needed for SQL.  I enjoyed the Khan Academy videos. I learned about the applications of SQL and what it can do for a website. I enjoyed the sqlzoo site because they show the code and results. I liked going over the w3schools exercises. They ask you to write the answer to the statement and have the show answer available so I can complete the exercise. I feel that I have completed this assignment with the help of these videos.   . .</p>
 
 </body>  
 
